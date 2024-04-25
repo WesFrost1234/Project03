@@ -583,11 +583,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _prefabToSpawn: {fileID: 5741691135794992884, guid: f5b433ae09680e140989d7dff49899c0,
     type: 3}
+  _spawnObjectOnce: 0
+  _spawnRate: 5
+  _spawnRateIsRandom: 0
+  _spawnRateRandom: 0
+  _element: 0
+  _isSpawnRandom: 0
   _transformsArray:
   - {fileID: 1706129730}
   - {fileID: 1371774768}
   - {fileID: 1316033420}
-  _element: 0
 --- !u!1 &1316033419
 GameObject:
   m_ObjectHideFlags: 0
