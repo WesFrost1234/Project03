@@ -8,15 +8,22 @@ public class EntitySpawner : MonoBehaviour
     
     [SerializeField] GameObject _prefabToSpawn;
 
+    [Space (10)]
+
     [Tooltip("Does the Object Spawn Multiple Times?")]
     [SerializeField] bool _spawnObjectOnce = false;
 
-    
+    [Space(10)]
+
     [Tooltip("The amount of time in seconds set at one constant that the prefab will spawn in")]
     [SerializeField] int _spawnRate = 0;
 
+    [Space(10)]
+
     [Tooltip("Is spawn rate random from a range?")]
     [SerializeField] bool _spawnRateIsRandom = false;
+
+    [Space(10)]
 
     [Tooltip("Lower Constant of the Range")]
     [SerializeField] int _lowerBoundsOfRange = 2;
@@ -31,9 +38,13 @@ public class EntitySpawner : MonoBehaviour
 
     [Tooltip("Current selected Tranform that Prefab will spawn at")]
     [SerializeField] int _element = 0;
-    
+
+    [Space(10)]
+
     [Tooltip("Does the prefab spawn at a random point?")]
     [SerializeField] bool _isSpawnRandom = false;
+
+    [Space(10)]
 
     [SerializeField] Transform[] _transformsArray;
 
