@@ -18,9 +18,13 @@ public class EntitySpawner : MonoBehaviour
     [Tooltip("Is spawn rate random from a range?")]
     [SerializeField] bool _spawnRateIsRandom = false;
 
-    [Tooltip("The amount of time in seconds between two constants that the prefab can spawn")]
-    [Range(0, 10000)]
-    public int _spawnRateRandom;
+    [Tooltip("Lower Constant of the Range")]
+    [SerializeField] int _lowerBoundsOfRange = 2;
+
+    [Tooltip("Higher Constant of the Range")]
+    [SerializeField] int _higherBoundsOfRange = 10;
+
+    int _spawnRateRandom = 0;
 
     
     [Header("Transforms Array Settings")]
@@ -35,6 +39,7 @@ public class EntitySpawner : MonoBehaviour
 
     
     private bool _hasPrefabSpawnedOnce = false;
+    private bool _hasTimerBegun = false;
 
     private void Update()
     {
@@ -44,7 +49,12 @@ public class EntitySpawner : MonoBehaviour
         }
         if(_spawnObjectOnce == false)
         {
-            SpawnPrefabMult();
+            if(_hasTimerBegun == false)
+            {
+                _hasTimerBegun = true;
+                _spawnRateRandom = Random.Range(_lowerBoundsOfRange, _higherBoundsOfRange);
+                SpawnPrefabMult();
+            }
         }
     }
 
@@ -93,12 +103,14 @@ public class EntitySpawner : MonoBehaviour
                 if (_isSpawnRandom == false)
                 {
                     Instantiate(_prefabToSpawn, _transformsArray[_element]);
+                    _hasTimerBegun = false;
                     Debug.Log("Prefab Spawned");
                 }
                 else if (_isSpawnRandom == true)
                 {
                     int _randElement = Random.Range(0, _transformsArray.Length);
                     Instantiate(_prefabToSpawn, _transformsArray[_randElement]);
+                    _hasTimerBegun = false;
                     Debug.Log("Prefab Spawned");
                 }
             }
