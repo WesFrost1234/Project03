@@ -265,7 +265,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 395798455}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -0.71}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -585,10 +585,11 @@ MonoBehaviour:
     type: 3}
   _spawnObjectOnce: 0
   _spawnRate: 5
-  _spawnRateIsRandom: 0
-  _spawnRateRandom: 0
+  _spawnRateIsRandom: 1
+  _lowerBoundsOfRange: 2
+  _higherBoundsOfRange: 5
   _element: 0
-  _isSpawnRandom: 0
+  _isSpawnRandom: 1
   _transformsArray:
   - {fileID: 1706129730}
   - {fileID: 1371774768}
